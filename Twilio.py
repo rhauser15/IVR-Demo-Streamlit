@@ -23,6 +23,8 @@ st.write('Substitutes needed')
 
 st.map(map_data)
 
+satUp=100
+satDown=0
 
 #Chart
 df = pd.DataFrame({
