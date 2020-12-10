@@ -13,6 +13,8 @@ from twilio.rest import Client
 ##Importing
 
 client = Client(account_sid, auth_token)
+totalTeach=100
+teachOut=0
 
 
 ####Streamlit User design###
@@ -27,8 +29,8 @@ st.map(map_data)
 #Chart
 df = pd.DataFrame({
   'Total Teachers': [100],
-  'Teachers Available': [satUp],
-  'Substitutes needed': [satDown]
+  'Teachers Available': [totalTeach],
+  'Substitutes needed': [teachOut]
 })
 
 df
