@@ -55,7 +55,12 @@ if st.button('Sattelite Down Test'):
         to="+19199498424",
         from_="+19048228670",
         body="alert")
+    execution = client.studio \
+        .flows('FW58181827a9c369058b7f9f1310cdcb34') \
+        .executions \
+        .create(to='+19199498424', from_='+19048228670')
 
+    print(execution.sid)
 
 
     print(message.sid)
