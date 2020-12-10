@@ -6,31 +6,19 @@ import pandas as pd
 from vardata import *
 from Config import *
 
-##demo send messages
+##Importing SID/Auth
 from twilio.rest import Client
 
-# Your Account SID from twilio.com/console
 
-# Your Auth Token from twilio.com/console
-
-
+##Importing
 
 client = Client(account_sid, auth_token)
 
-leEngineer = "Roger"
-satUp = 516
-satDown = 0
 
+####Streamlit User design###
+st.title('Teacher Monitoring')
 
-
-
-####User design###
-st.title('Starlink Monitoring')
-
-st.write('Current Geolocation of Base stations and satellites')
-
-
-
+st.write('Substitutes needed')
 
 
 st.map(map_data)
@@ -38,15 +26,15 @@ st.map(map_data)
 
 #Chart
 df = pd.DataFrame({
-  'Total Satellites Deployed': [516],
-  'Satellites Up': [satUp],
-  'Satellites Down': [satDown]
+  'Total Teachers': [100],
+  'Teachers Available': [satUp],
+  'Substitutes needed': [satDown]
 })
 
 df
 
 le = pd.DataFrame({
-    'Lead Engineers': ["Roger", "Ted", "Tyrell"],
+    'Substitute Teachers': ["Roger", "Ted", "Tyrell"],
     'Contact Numbers': [+19199498424, +19199498424, +19199498424]
 })
 
@@ -54,13 +42,9 @@ le.set_index('Lead Engineers', inplace=True)
 
 le
 
-le2 = pd.DataFrame({
-    'Lead Engineers': ["Roger", "Ted", "Tyrell"],
-    'Contact Numbers': [+19199498424, +19199498424, +19199498424]
-})
 
 #Interactive checkbox
-if st.button('Sattelite Down Test'):
+if st.button('3 Teachers are unavailable'):
     message = client.messages.create(
         to="+19199498424",
         from_="+19048228670",
